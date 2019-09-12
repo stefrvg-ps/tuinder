@@ -131,7 +131,7 @@
     <section id="services">
       <div class="container">
         <div class="section-header">
-          <h2>Services</h2>
+          <h2>Diensten</h2>
           <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
         </div>
 
@@ -173,7 +173,7 @@
     <section id="portfolio" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>Our Portfolio</h2>
+          <h2>Portfolio</h2>
           <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
         </div>
       </div>
@@ -304,19 +304,15 @@
 
         <div class="row contact-info">
           <div class="col-md-6">
-            <div class="contact-">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Telefoon nummer</h3>
               <p><a href="tel:+31(0)620215285">+31 (0) 620215285</a></p>
-            </div>
           </div>
 
           <div class="col-md-6">
-            <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
               <p><a href="mailto:nielscoppens@hotmail.com">nielscoppens@hotmail.com</a></p>
-            </div>
           </div>
         </div>
       </div>
