@@ -47,8 +47,8 @@
         
       </div>
       <div class="social-links float-right">
-        <i class="fa fa-envelope-o"></i> <a href="mailto:nielscoppens@hotmail.com">nielscoppens@hotmail.com</a>
-        <i class="fa fa-phone"></i> +31 (0) 620215285
+        <i class="fa fa-envelope-o" style="color:white"></i> <a href="mailto:nielscoppens@hotmail.com">nielscoppens@hotmail.com</a>
+        <i class="fa fa-phone" style="color:white"></i><a>+31 (0) 620215285</a> 
       </div>
     </div>
   </section>
@@ -139,7 +139,7 @@
 
           <div class="col-lg-4">
             <div class="box wow fadeInLeft">
-              <div class="icon"><i class="fa fa-bar-chart"></i></div>
+              <div class="icon" style="color:#50C878"><i class="fa fa-bar-chart" ></i></div>
               <h4 class="title"><a href="">Renovatie</a></h4>
               <p class="description"></p>
             </div>
