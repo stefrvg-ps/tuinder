@@ -341,7 +341,7 @@
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Vertel ons waar het over gaat" placeholder="Message"></textarea>
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Vertel ons waar het over gaat" placeholder="Bericht"></textarea>
               <div class="validation"></div>
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
