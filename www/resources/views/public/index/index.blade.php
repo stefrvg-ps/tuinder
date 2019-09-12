@@ -106,7 +106,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 about-img">
-            <img src="img/about-img.jpg" alt="">
+            <img src="img/logo.jpg" alt="">
           </div>
 
           <div class="col-lg-6 content">
@@ -114,9 +114,9 @@
             <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
 
             <ul>
-              <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
             </ul>
 
           </div>
@@ -139,7 +139,7 @@
 
           <div class="col-lg-4">
             <div class="box wow fadeInLeft">
-              <div class="icon" style="color:#50C878"><i class="fa fa-bar-chart" ></i></div>
+              <div class="icon"><i class="fa fa-bar-chart"></i></div>
               <h4 class="title"><a href="">Renovatie</a></h4>
               <p class="description"></p>
             </div>
@@ -304,13 +304,13 @@
 
         <div class="row contact-info">
           <div class="col-md-6">
-              <i class="ion-ios-telephone-outline"></i>
+              <i class="ion-ios-telephone-outline" style="color:#50C878"></i>
               <h3>Telefoon nummer</h3>
               <p><a href="tel:+31(0)620215285">+31 (0) 620215285</a></p>
           </div>
 
           <div class="col-md-6">
-              <i class="ion-ios-email-outline"></i>
+              <i class="ion-ios-email-outline" style="color:#50C878"></i>
               <h3>Email</h3>
               <p><a href="mailto:nielscoppens@hotmail.com">nielscoppens@hotmail.com</a></p>
           </div>
