@@ -15,3 +15,13 @@ Route::resource('/', 'IndexController');
 Auth::routes();
 
 
+Route::middleware(['auth'])->group(function(){
+    Route::prefix('admin')->group(function(){
+        Route::resource('dashboard', 'CmsDashboardController');
+        Route::resource('index', 'CmsHomeController');
+        Route::resource('contact', 'CmsContactController');
+        Route::resource('portfolio', 'CmsPortfolioController');
+    });
+});
+
+
