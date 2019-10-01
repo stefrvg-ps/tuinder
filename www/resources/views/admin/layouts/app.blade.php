@@ -25,15 +25,9 @@
 
     @include('admin.layouts.inc.footer')
 
-    <!-- Include Editor style. -->
-<link href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
-
 <!-- Include JS file. -->
 <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js'></script>
 
-  <script>
-    new FroalaEditor('textarea')
-  </script>
 
     <!--   Core   -->
     <script src="{{ asset('admin/js/plugins/jquery/dist/jquery.min.js') }}"></script>

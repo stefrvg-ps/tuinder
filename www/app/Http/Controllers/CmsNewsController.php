@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\News;
 
+use Illuminate\Support\Facades\Storage;
+
 class CmsNewsController extends Controller
 {
     /**
@@ -15,9 +17,12 @@ class CmsNewsController extends Controller
      */
     public function index()
     {
-        return view('admin/news/index');
-    }
+        $CmsNews = news::all();
 
+        return view('admin/news/index')->with([
+            'CmsNews' => $CmsNews
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +41,23 @@ class CmsNewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:20',
+            'description' => 'required',
+            'image' => 'image|mimes:jpg,png,svg,gif,jpeg|max:2048'
+        ]);
+        
+        $news = new News;
+        if($request->hasFile('image')){
+            $imageName = time().'_NEWS.'.$request->file('image')->getClientOriginalExtension();
+            $news->image_name = $imageName;
+            Storage::disk('local')->putFileAs('news', $request->file('image'), $imageName);
+        }
+        $news->news_desc = $request->input('description');
+        $news->title = $request->input('title');
+        $news->save();
+
+        return redirect('/admin/news')->with('success', 'Succesvol een foto toegevoegd');
     }
 
     /**
