@@ -69,6 +69,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {{ $page === "nieuws" ? 'active' : '' }}" href="/admin/news">
+              <i class="ni ni-notification-70 text-black"></i> Nieuws
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link {{ $page === "Sfeerimpressie" ? 'active' : '' }}" href="/admin/portfolio">
               <i class="fas fa-users text-black"></i> Sfeerimpressie
             </a>
