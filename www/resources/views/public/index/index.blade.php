@@ -186,8 +186,8 @@
           @foreach ($pictures as $p)
             <div class="col-lg-3 col-md-4">
               <div class="portfolio-item wow fadeInUp">
-                <a href="{{ asset('storage/services/'.$p->image_name) }}" class="portfolio-popup">
-                  <img src="img/portfolio/1.jpg" alt="">
+                <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
+                  <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
                   <div class="portfolio-overlay">
                     <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
                   </div>

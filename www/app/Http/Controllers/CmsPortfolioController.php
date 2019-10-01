@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Picture;
+use Illuminate\Support\Facades\Storage;
 
 class CmsPortfolioController extends Controller
 {
@@ -12,8 +14,12 @@ class CmsPortfolioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin/portfolio/index');
+    {   
+        $CmsPictures = Picture::all();
+
+        return view('admin/portfolio/index')->with([
+            'CmsPictures' => $CmsPictures
+        ]);
     }
 
     /**
@@ -34,7 +40,23 @@ class CmsPortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'desc' => 'required|max:20',
+            'type' => 'required',
+            'image' => 'image|mimes:jpg,png,svg,gif,jpeg|max:2048'
+        ]);
+        
+        $picture = new Picture;
+        if($request->hasFile('image')){
+            $imageName = time().'_PORTFOLIO.'.$request->file('image')->getClientOriginalExtension();
+            $picture->image_name = $imageName;
+            Storage::disk('local')->putFileAs('portfolio', $request->file('image'), $imageName);
+        }
+        $picture->image_desc = $request->input('desc');
+        $picture->image_type = $request->input('type');
+        $picture->save();
+
+        return redirect('/admin/portfolio')->with('success', 'Succesvol een foto toegevoegd');
     }
 
     /**
