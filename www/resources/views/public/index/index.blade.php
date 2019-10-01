@@ -165,69 +165,42 @@
         </div>
 
       </div>
-    </section><!-- #services -->
+    </section>
 
-    <div class="container-fluid">
-      <h1 class="text-center my-3">Bootstrap 4 Card Carousel</h1>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner row w-100 mx-auto">
-          <div class="carousel-item col-md-4 active">
-            <div class="card">
-              <img src="{{asset('img/portfolio/1.jpg')}}" class="" alt="...">
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-              <div class="card">
-                  <img src="{{asset('img/portfolio/1.jpg')}}" class="" alt="...">
-                </div>
-          </div>
-          <div class="carousel-item col-md-4">
-              <div class="card">
-                  <img src="{{asset('img/portfolio/1.jpg')}}" class="" alt="...">
-                </div>
-          </div>
-          <div class="carousel-item col-md-4">
-              <div class="card">
-                <img src="{{asset('img/portfolio/1.jpg')}}" class="" alt="...">
-              </div>
-          </div>
-          <div class="carousel-item col-md-4">
-              <div class="card">
-                  <img src="{{asset('img/portfolio/1.jpg')}}" class="" alt="...">
-                </div>
-          </div>
-          <div class="carousel-item col-md-4">
-              <div class="card">
-                  <img src="{{asset('img/portfolio/1.jpg')}}" class="" alt="...">
-                </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Card 7</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is
-                  a little bit longer.</p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mt-4">
-              <a class="btn btn-outline-secondary mx-1 prev" href="javascript:void(0)" title="Previous">
-                <i class="fa fa-lg fa-chevron-left"></i>
-              </a>
-              <a class="btn btn-outline-secondary mx-1 next" href="javascript:void(0)" title="Next">
-                <i class="fa fa-lg fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
+    <!--==========================
+      Our Portfolio Section
+    ============================-->
+    @if (count($pictures) > 0)
+        
+    <section id="portfolio" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Portfolio</h2>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
         </div>
       </div>
-    </div>
+
+      <div class="container-fluid">
+        <div class="row no-gutters">
+
+          @foreach ($pictures as $p)
+            <div class="col-lg-3 col-md-4">
+              <div class="portfolio-item wow fadeInUp">
+                <a href="{{ asset('storage/services/'.$p->image_name) }}" class="portfolio-popup">
+                  <img src="img/portfolio/1.jpg" alt="">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          @endforeach
+
+        </div>
+      </div>
+    </section><!-- #portfolio -->
+        
+    @endif
     
 
     <!--==========================
@@ -311,6 +284,7 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
+        <span class="float-left"><a href="/login">Login medewerker</a></span>
         &copy; Copyright <strong>NC Tuinservice</strong>. All Rights Reserved
       </div>
     </div>
@@ -319,63 +293,23 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="lib/sticky/sticky.js"></script>
+  <script src="{{ asset('lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{ asset('lib/jquery/jquery-migrate.min.js')}}"></script>
+  <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{ asset('lib/easing/easing.min.js')}}"></script>
+  <script src="{{ asset('lib/superfish/hoverIntent.js')}}"></script>
+  <script src="{{ asset('lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{ asset('lib/wow/wow.min.js')}}"></script>
+  <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{ asset('lib/magnific-popup/magnific-popup.min.js')}}"></script>
+  <script src="{{ asset('lib/sticky/sticky.js')}}"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <script src="{{ asset('contactform/contactform.js')}}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-  <script>
-  (function ($) {
-  "use strict";
-  // Auto-scroll
-  $('#myCarousel').carousel({
-    interval: 5000
-  });
+  <script src="{{ asset('js/main.js')}}"></script>
 
-  // Control buttons
-  $('.next').click(function () {
-    $('.carousel').carousel('next');
-    return false;
-  });
-  $('.prev').click(function () {
-    $('.carousel').carousel('prev');
-    return false;
-  });
-
-  // On carousel scroll
-  $("#myCarousel").on("slide.bs.carousel", function (e) {
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 3;
-    var totalItems = $(".carousel-item").length;
-    if (idx >= totalItems - (itemsPerSlide - 1)) {
-      var it = itemsPerSlide -
-          (totalItems - idx);
-      for (var i = 0; i < it; i++) {
-        // append slides to end 
-        if (e.direction == "left") {
-          $(
-            ".carousel-item").eq(i).appendTo(".carousel-inner");
-        } else {
-          $(".carousel-item").eq(0).appendTo(".carousel-inner");
-        }
-      }
-    }
-  });
-})
-(jQuery);
-  </script>
 
 </body>
 </html>

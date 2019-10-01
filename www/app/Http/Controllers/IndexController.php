@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Picture;
 
 class IndexController extends Controller
 {
@@ -13,8 +14,10 @@ class IndexController extends Controller
      */
     public function index()
     {
-        
-        return view('public.index.index');
+        $pictures = Picture::all();
+        return view('public.index.index')->with([
+            'pictures' => $pictures
+        ]);
     }
 
     /**

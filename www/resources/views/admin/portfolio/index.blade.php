@@ -48,7 +48,22 @@
               <h3 class="mb-0">Sfeerimpressie</h3>
             </div>
             <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda porro, atque saepe distinctio vitae nobis itaque facere autem animi inventore natus voluptate sunt obcaecati, amet voluptatem reprehenderit est consequuntur reiciendis corporis tempore labore error expedita cum ab! Maxime, molestias recusandae quas explicabo rerum voluptas? Numquam nemo, ratione quis asperiores voluptatum dignissimos repudiandae consequuntur ea omnis, minima quasi reiciendis quam maxime vel nisi dolore maiores eligendi error sapiente accusamus recusandae aspernatur molestias blanditiis? Fugiat libero, itaque, quasi vero exercitationem suscipit soluta sed veritatis autem expedita commodi optio et magnam quos tenetur minima veniam corporis vitae dignissimos aperiam porro! Magni, nisi inventore.
+                <table class="table table-striped table-inverse table-responsive">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                </table>
             </div>
           </div>
         </div>
