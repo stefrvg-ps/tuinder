@@ -6,7 +6,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="/">
-        <img src="{{ asset('img/logo/logonew.jpg') }}" alt="L'arte dell'estetica" style="width: 100%; max-height: 90px; max-width: 180px;">
+        <img src="{{ asset('img/logo/logonew.jpg') }}" alt="NC Tuinservice" style="width: 100%; max-height: 90px; max-width: 180px;">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -22,10 +22,6 @@
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Welkom !</h6>
             </div>
-            <a href="/admin/profile" class="dropdown-item">
-              <i class="ni ni-single-02"></i>
-              <span>Mijn profiel</span>
-            </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" onclick="document.location.reload()"><i class="fas fa-undo-alt"></i> Herladen</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="history.back()"><i class="fas fa-arrow-left"></i> Terug</a>
@@ -73,7 +69,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $page === "portfolio" ? 'active' : '' }}" href="/admin/portfolio">
+            <a class="nav-link {{ $page === "Sfeerimpressie" ? 'active' : '' }}" href="/admin/portfolio">
               <i class="fas fa-users text-black"></i> Sfeerimpressie
             </a>
           </li>
@@ -84,27 +80,10 @@
           </li>
         </ul>
         <!-- Divider -->
-        <hr class="my-3">
+        {{-- <hr class="my-3"> --}}
         <!-- Heading -->
-        <h6 class="navbar-heading text-muted">Persoonlijk</h6>
+        {{-- <h6 class="navbar-heading text-muted">Persoonlijk</h6> --}}
         <!-- Navigation -->
-        <ul class="navbar-nav mb-md-3">
-          <li class="nav-item">
-            <a class="nav-link {{ $page === "profiel" ? 'active' : '' }}" href="/admin/profile">
-              <i class="ni ni-badge text-pink"></i> Mijn profiel
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ $page === "berichten" ? 'active' : '' }}" href="/admin/messages">
-              <i class="ni ni-chat-round text-pink"></i> Berichten
-            </a>
-          </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="/admin/users">
-              <i class="fas fa-users"></i> Gebruikers
-            </a>
-          </li> --}}
-        </ul>
         <hr class="my-3">
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
