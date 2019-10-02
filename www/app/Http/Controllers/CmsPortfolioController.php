@@ -78,7 +78,8 @@ class CmsPortfolioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $picture = Picture::findOrFail($id);
+        return view('admin.portfolio.edit')->with('picture', $picture);
     }
 
     /**
@@ -90,7 +91,26 @@ class CmsPortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'desc' => 'required|max:20',
+            'type' => 'required',
+            'image' => 'image|mimes:jpg,png,svg,gif,jpeg|max:2048'
+        ]);
+        $picture = Picture::findOrFail($id);
+        if($request->hasFile('image')){
+            if($picture->image_name != 'stock_picture_image.png'){
+                Storage::disk('local')->delete('portfolio/'.$picture->image_name);
+            }
+            $imageName = time().'_PORTFOLIO.'.$request->file('image')->getClientOriginalExtension();
+            $picture->image_name = $imageName;
+            Storage::disk('local')->putFileAs('portfolio', $request->file('image'), $imageName);
+        }
+
+        $picture->image_desc = $request->input('desc');
+        $picture->image_type = $request->input('type');
+        $picture->update();
+
+        return redirect('/admin/portfolio')->with('success', 'Succesvol foto aangepast');
     }
 
     /**
@@ -101,6 +121,10 @@ class CmsPortfolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $picture = Picture::findOrFail($id);
+        Storage::disk('local')->delete('portfolio/'.$picture->image_name);
+        $picture->delete();
+
+        return redirect('/admin/portfolio')->with('success', 'Succesvol een foto verwijderd');
     }
 }

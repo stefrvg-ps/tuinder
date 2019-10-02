@@ -62,7 +62,7 @@
       <div id="logo" class="pull-left">
         <h1><a href="#body" class="scrollto">NC <span>Tuinservice</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+        {{-- <a href="#body"><img src="img/Logo.png" alt="" title="" class="img mh-10"/></a> --}}
       </div>
 
       <nav id="nav-menu-container">
@@ -139,7 +139,7 @@
 
           <div class="col-lg-4">
             <div class="box wow fadeInLeft">
-              <div class="icon"><i class="fa fa-bar-chart"></i></div>
+              <div class="icon"><i class="fa fas fa-tree"></i></div>
               <h4 class="title"><a href="">Renovatie</a></h4>
               <p class="description"></p>
             </div>
@@ -147,7 +147,7 @@
 
           <div class="col-lg-4">
             <div class="box wow fadeInRight">
-              <div class="icon"><i class="fa fa-picture-o"></i></div>
+              <div class="icon"><i class="fa fa-leaf"></i></div>
               <h4 class="title"><a href="">Aanleg</a></h4>
               <p class="description"></p>
             </div>
@@ -155,7 +155,7 @@
 
           <div class="col-lg-4">
             <div class="box wow fadeInLeft" data-wow-delay="0.2s">
-              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
+              <div class="icon"><i class="fa fa-sun-o"></i></div>
               <h4 class="title"><a href="">Onderhoud</a></h4>
               <p class="description"></p>
             </div>
@@ -175,15 +175,22 @@
     <section id="portfolio" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>Our Portfolio</h2>
+          <h2>Ons Portfolio</h2></div>
+      </div>
+
+      <div class="container">
+        <div class="section-header mt-3">
+          <h3>Renovatie</h3>
           <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
         </div>
       </div>
 
       <div class="container-fluid">
-        <div class="row no-gutters">
+        <div class="row ">
 
           @foreach ($pictures as $p)
+          {{-- Renovatie --}}
+          @if ($p->image_type === 0)
             <div class="col-lg-3 col-md-4">
               <div class="portfolio-item wow fadeInUp">
                 <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
@@ -194,6 +201,65 @@
                 </a>
               </div>
             </div>
+            @endif
+          @endforeach
+
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="section-header mt-3">
+          <h3>Aanleg</h3>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+
+          @foreach ($pictures as $p)
+          {{-- Renovatie --}}
+          @if ($p->image_type === 1)
+            <div class="col-lg-3 col-md-4">
+              <div class="portfolio-item wow fadeInUp">
+                <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
+                  <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
+                  <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            @endif
+          @endforeach
+
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="section-header mt-3">
+          <h3>Onderhoud</h3>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+
+          @foreach ($pictures as $p)
+          {{-- Onderhoud --}}
+          @if ($p->image_type === 2)
+              <div class="col-lg-3 col-md-4">
+                <div class="portfolio-item wow fadeInUp">
+                  <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
+                    <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            @endif
           @endforeach
 
         </div>
@@ -203,23 +269,7 @@
     @endif
     
 
-    <!--==========================
-      Call To Action Section
-    ============================-->
-    <section id="call-to-action" class="wow fadeInUp">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- #call-to-action -->
+    <hr>
 
     <!--==========================
       Contact Section

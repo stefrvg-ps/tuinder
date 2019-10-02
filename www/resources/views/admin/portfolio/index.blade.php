@@ -1,5 +1,5 @@
 @php
-    $page = "Sfeerimpressie";
+    $page = "sfeerimpressie";
 @endphp
 @extends('admin.layouts.app')
  
@@ -60,6 +60,7 @@
                           <th>Afbeelding beschrijving</th>
                           <th>Afbeelding type</th>
                           <th>Afbeelding</th>
+                          <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -67,13 +68,25 @@
                             <tr>
                               <td>{{$cp->image_desc}}</td>
                               @if ($cp->image_type == '0')
-                                <td>Aanleg</td>
-                              @elseif($cp->image_type == '1')
-                                <td>Onderhoud</td>
-                              @else
                                 <td>Renovatie</td>
+                              @elseif($cp->image_type == '1')
+                                <td>Aanleg</td>
+                              @else
+                                <td>Onderhoud</td>
                               @endif
                               <td><img src="{{ asset('storage/portfolio/'.$cp->image_name) }}" style="max-height:5%" alt=""></td>
+                              <td class="float-right">
+                                  <a href="/admin/portfolio/{{$cp->id}}/edit" class="btn btn-info btn-fill">BEWERK</a>
+                                  @if($cp->count('id') > 1)
+                                      <form method="post" action="/admin/portfolio/{{$cp->id}}"style="display: inline-block;">
+                                          @csrf
+                                          @method('delete')
+                                          <button name="delete" type="submit" class="btn btn-danger" title="Verwijder" style="padding-top: -31px !important;">
+                                                  <i class="fas fa-trash-alt" style="font-size: 24px;"></i>
+                                          </button>
+                                      </form>
+                                  @endif
+                                </td>
                             </tr>
                           @endforeach
                         </tbody>
@@ -119,9 +132,9 @@
                     <div class="form-group">
                       <label for="type">Type</label>
                       <select name="type" id="type" class="form-control" required>
-                        <option value="0">Aanleg</option>
-                        <option value="1">Onderhoud</option>
-                        <option value="2">Renovatie</option>
+                        <option value="0">Renovatie</option>
+                        <option value="1">Aanleg</option>
+                        <option value="2">Onderhoud</option>
                       </select>
                     </div>
                   </div>
