@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CmsHomeController extends Controller
 {
@@ -13,7 +15,8 @@ class CmsHomeController extends Controller
      */
     public function index()
     {
-        return view('admin/index/index');
+        $about = About::where('id', 1)->first();
+        return view('admin.index.index')->with('about',$about);
     }
 
     /**
@@ -68,7 +71,24 @@ class CmsHomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+
+            ]);
+            
+        $about = About::findOrFail($id);
+        if($request->hasFile('image')){
+            $imageName = time().'_ABOUT.'.$request->file('image')->getClientOriginalExtension();
+            $about->image_name = $imageName;
+            Storage::disk('local')->putFileAs('about', $request->file('image'), $imageName);
+        }
+        $about->title = $request->input('title');
+        $about->desc = $request->input('desc');
+        $about->pro1 = $request->input('pro1');
+        $about->pro2 = $request->input('pro2');
+        $about->pro3 = $request->input('pro3');
+        $about->save();
+
+        return redirect('/admin/index')->with('success', 'Succesvol de homepagina bewerkt');
     }
 
     /**

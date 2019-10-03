@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\News;
+use App\About;
 use App\Picture;
 
 class IndexController extends Controller
@@ -14,9 +16,13 @@ class IndexController extends Controller
      */
     public function index()
     {
+        $about = About::first();
+        $news = News::all();
         $pictures = Picture::all();
         return view('public.index.index')->with([
-            'pictures' => $pictures
+            'pictures' => $pictures,
+            'news' => $news,
+            'about' => $about
         ]);
     }
 

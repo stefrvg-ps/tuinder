@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>NC Tuinservice</title>
   <!-- Favicon -->
-  <link href="{{ asset('admin/img/brand/favicon.png/') }}" rel="icon" type="image/png">
+  <link href="{{ asset('img/favicon.ico') }}" rel="icon" type="image/x-icon">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->

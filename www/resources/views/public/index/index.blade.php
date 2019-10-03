@@ -8,8 +8,8 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('img/favicon.png') }}" rel="icon">
-  <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ asset('img/favicon.ico') }}" rel="icon" type="image/x-icon">
+  <link href="{{ asset('img/apple-icon.png') }}"  rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
@@ -70,7 +70,7 @@
           <li class="menu-active"><a href="#body">Home</a></li>
           <li><a href="#about">Over ons</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#werkwijze">Werkwijze</a></li>
+          <li><a href="#news">Nieuws</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -106,17 +106,17 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 about-img">
-            <img src="img/logo.jpg" alt="">
+            <img src="{{asset('storage/about/'.$about->image_name)}}" alt="">
           </div>
 
           <div class="col-lg-6 content">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+            <h2>{{$about->title}}</h2>
+            <h3>{{$about->desc}}</h3>
 
             <ul>
-              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> {{$about->pro1}}</li>
+              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> {{$about->pro2}}</li>
+              <li><i class="ion-android-checkmark-circle" style="color:#50C878"></i> {{$about->pro3}}</li>
             </ul>
 
           </div>
@@ -187,23 +187,25 @@
 
       <div class="container-fluid">
         <div class="row ">
-
-          @foreach ($pictures as $p)
-          {{-- Renovatie --}}
-          @if ($p->image_type === 0)
-            <div class="col-lg-3 col-md-4">
-              <div class="portfolio-item wow fadeInUp">
-                <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
-                  <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+            <div class="col-8 mx-auto">
+                <div class="row">
+                @foreach ($pictures as $p)
+                {{-- Renovatie --}}
+                @if ($p->image_type === 0)
+                  <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                      <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
+                        <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
+                        <div class="portfolio-overlay">
+                          <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </a>
-              </div>
+                  @endif
+                @endforeach
             </div>
-            @endif
-          @endforeach
-
+          </div>
         </div>
       </div>
       <hr>
@@ -216,23 +218,25 @@
 
       <div class="container-fluid">
         <div class="row">
-
-          @foreach ($pictures as $p)
-          {{-- Renovatie --}}
-          @if ($p->image_type === 1)
-            <div class="col-lg-3 col-md-4">
-              <div class="portfolio-item wow fadeInUp">
-                <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
-                  <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+          <div class="col-8 mx-auto">
+            <div class="row">
+                @foreach ($pictures as $p)
+                {{-- Renovatie --}}
+                @if ($p->image_type === 1)
+                  <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                      <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
+                        <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
+                        <div class="portfolio-overlay">
+                          <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </a>
-              </div>
+                  @endif
+                @endforeach
             </div>
-            @endif
-          @endforeach
-
+          </div>
         </div>
       </div>
       <hr>
@@ -245,32 +249,63 @@
 
       <div class="container-fluid">
         <div class="row">
-
-          @foreach ($pictures as $p)
-          {{-- Onderhoud --}}
-          @if ($p->image_type === 2)
-              <div class="col-lg-3 col-md-4">
-                <div class="portfolio-item wow fadeInUp">
-                  <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
-                    <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
-                    <div class="portfolio-overlay">
-                      <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+          <div class="col-8 mx-auto">
+              <div class="row">
+                @foreach ($pictures as $p)
+                {{-- Onderhoud --}}
+                @if ($p->image_type === 2)
+                    <div class="col-lg-3 col-md-4">
+                      <div class="portfolio-item wow fadeInUp">
+                        <a href="{{ asset('storage/portfolio/'.$p->image_name) }}" class="portfolio-popup">
+                          <img src="{{ asset('storage/portfolio/'.$p->image_name) }}" alt="">
+                          <div class="portfolio-overlay">
+                            <div class="portfolio-info"><h2 class="wow fadeInUp">{{$p->image_desc}}</h2></div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </a>
-                </div>
-              </div>
-            @endif
-          @endforeach
-
+                  @endif
+                @endforeach
+            </div>
+          </div>
         </div>
       </div>
     </section><!-- #portfolio -->
-        
+    <hr>
     @endif
     
+    {{-- News --}}
+    <section id="news" class="wow fadeInUp">
 
-    <hr>
-
+        <div class="container">
+            <div class="section-header">
+              <h2>Nieuws</h2>
+              <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+            </div>
+    
+            <div class="row">
+              <div class="card-deck">
+              @foreach ($news as $n)
+              <div class="col-4 mx-auto">
+                <div class="card">
+                  <img class="card-img-top" src="{{ asset('storage/news/'.$n->image_name)}}" style="max-height:180px">
+                  <div class="card-body">
+                    <h5 class="card-title">{{$n->title}}</h5>
+                    <hr>
+                    <p class="card-text">{{$n->news_desc}}</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">{{$n->created_at}}</small>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+              </div>
+            </div>
+          </div>
+    </section>  
+    <hr class="mt-5 mb-5">
+    {{-- end news --}}
     <!--==========================
       Contact Section
     ============================-->

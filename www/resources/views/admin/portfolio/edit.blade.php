@@ -49,9 +49,9 @@
                           <div class="form-group">
                             <label for="type">Type</label>
                             <select name="type" id="type" class="form-control" required>
-                              <option value="0" {{$picture->priority === 0 ? 'selected' : ''}}>Renovatie</option>
-                              <option value="1" {{$picture->priority === 1 ? 'selected' : ''}}>Aanleg</option>
-                              <option value="2" {{$picture->priority === 2 ? 'selected' : ''}}>Onderhoud</option>
+                              <option value="0" {{$picture->image_type == 0 ? 'selected' : ''}}>Renovatie</option>
+                              <option value="1" {{$picture->image_type == 1 ? 'selected' : ''}}>Aanleg</option>
+                              <option value="2" {{$picture->image_type == 2 ? 'selected' : ''}}>Onderhoud</option>
                             </select>
                           </div>
                         </div>
