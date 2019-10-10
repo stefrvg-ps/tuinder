@@ -53,7 +53,7 @@ class CmsNewsController extends Controller
             $news->image_name = $imageName;
             Storage::disk('local')->putFileAs('news', $request->file('image'), $imageName);
         }
-        $news->news_desc = $request->input('description');
+        $news->news_desc = $request->input('desc');
         $news->title = $request->input('title');
         $news->save();
 

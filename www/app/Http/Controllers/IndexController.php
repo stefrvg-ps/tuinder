@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use App\About;
+use App\Messages;
 use App\Picture;
 
 class IndexController extends Controller
@@ -44,7 +45,22 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:20',
+            'email' => 'required',
+            'subject' => 'required',
+            'desc' => 'required',
+            
+        ]);
+
+        $message = new Messages;
+        $message->name = $request->input('name');
+        $message->email = $request->input('email');
+        $message->subject = $request->input('subject');
+        $message->desc = $request->input('desc');
+        $message->save();
+
+        return redirect('/#contact')->with('success', 'Uw bericht is verzonden. Wij proberen zo spoedig mogelijk te reageren!');
     }
 
     /**

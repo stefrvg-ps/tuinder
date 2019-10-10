@@ -333,29 +333,50 @@
 
       <div class="container">
         <div class="form">
-          <div id="sendmessage">Uw bericht is verstuurd!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Uw naam" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
+            @include('helpers.errors')
+          <form action="{{ action('IndexController@store') }}" method="POST">
+    
+            @csrf
+            @method('POST')
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="name">Naam</label>
+                        <input id="name" class="form-control" type="text" name="name" placeholder="naam..." value="{{ old('name')}}" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" class="form-control" type="email" name="email" placeholder="email..." value="{{ old('email')}}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                  <div class="form-group">
+                      <label for="subject">Onderwerp</label>
+                      <input id="subject" class="form-control" type="text" name="subject" placeholder="onderwerp..." value="{{ old('subject')}}" required>
+                  </div>
               </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Uw email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
+           </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="desc">Bericht</label>
+                        <textarea id="desc" class="form-control" type="text" name="desc" placeholder="bericht..." rows="5" required style="max-height: 1000px;">{{ old('desc')}}</textarea>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Onderwerp" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validation"></div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-info">Verstuur !</button>
+                </div>
             </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Vertel ons waar het over gaat" placeholder="Bericht"></textarea>
-              <div class="validation"></div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
+
+        </form>
         </div>
 
       </div>

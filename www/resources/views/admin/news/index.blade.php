@@ -92,43 +92,33 @@
                 </button>
             </div>
             <div class="modal-body">
-              <form action="{{ action('CmsNewsController@store') }}" method="POST" enctype="multipart/form-data" id="pictureForm">
+              <form action="{{ action('CmsNewsController@store') }}" method="POST" enctype="multipart/form-data" id="AddNews">
                 @csrf
                 @method('POST')
                 <div class="row">
+                  <div class="col-6">
+                    <label for="title">Titel</label>
+                    <input class="form-control" id="title" name="title" >
+                  </div>
+                  <div class="col-6">
+                    <label for="image">Omslag foto</label>
+                    <input type="file" class="form-control" id="image" name="image" >
+                  </div>
+                </div>
+                <div class="row">
                   <div class="col-12">
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="title">Titel</label>
-                          <input type="text" name="title" id="title" class="form-control" placeholder="Titel" aria-describedby="helpId" value="{{old('Title')}}" required>
-                        </div>
-                      </div>
-                        <div class="col-6">
-                          <div class="from-group">
-                            <label for="image">Omslag foto</label>
-                            <input type="file" name="image" id="image" class="form-control " required>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                          <div class="from-group">
-                            <label for="description">Omschrijving</label>
-                            <textarea rows="3" name="description" id="description" class="form-control" required></textarea>
-                          </div>
-                        </div>
-                      </div> 
+                    <label for="desc">Beschrijving</label>
+                    <textarea rows="5" class="form-control" id="desc" name="desc"></textarea>
                   </div>
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button form="pictureForm" type="submit" class="btn btn-primary">Save</button>
-            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button form="AddNews" type="submit" class="btn btn-primary">Save</button>
           </div>
         </div>
+        </div>
       </div>
+    </div>
 @endsection

@@ -48,9 +48,81 @@
               <h3 class="mb-0">Contact</h3>
             </div>
             <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda porro, atque saepe distinctio vitae nobis itaque facere autem animi inventore natus voluptate sunt obcaecati, amet voluptatem reprehenderit est consequuntur reiciendis corporis tempore labore error expedita cum ab! Maxime, molestias recusandae quas explicabo rerum voluptas? Numquam nemo, ratione quis asperiores voluptatum dignissimos repudiandae consequuntur ea omnis, minima quasi reiciendis quam maxime vel nisi dolore maiores eligendi error sapiente accusamus recusandae aspernatur molestias blanditiis? Fugiat libero, itaque, quasi vero exercitationem suscipit soluta sed veritatis autem expedita commodi optio et magnam quos tenetur minima veniam corporis vitae dignissimos aperiam porro! Magni, nisi inventore.
+              <div class="row">
+                <div class="col-12">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-inverse  w-100 ">
+                      <thead class="thead-inverse">
+                        <tr>
+                          <th>Naam</th>
+                          <th>Email</th>
+                          <th>Onderwerp</th>
+                          <th>Aangemaakt</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($messages as $m)
+                            <tr>
+                              <td>{{$m->name}}</td>
+                              <td>{{$m->email}}</td>
+                              <td>{{$m->subject}}</td>
+                              <td>{{$m->created_at}}</td>
+                              <td class="float-right">
+                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#viewMsg{{$m->id}}"><i class="fas fa-eye" style="font-size: 24px;"></i> </button>
+                                @if($m->count('id') > 1)
+                                    <form method="post" action="/admin/contact/{{$m->id}}"style="display: inline-block;">
+                                        @csrf
+                                        @method('delete')
+                                        <button name="delete" type="submit" class="btn btn-danger" title="Verwijder" style="padding-top: -31px !important;">
+                                                <i class="fas fa-trash-alt" style="font-size: 24px;"></i>
+                                        </button>
+                                    </form>
+                                @endif
+                                </td>
+                            </tr>
+                          @endforeach
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+
+
+      @foreach ($messages as $m)
+        <div class="modal fade shadow" id="viewMsg{{$m->id}}" tabindex="-1" role="dialog" aria-labelledby="viewMsg{{$m->id}}" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Bericht</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <small>Naam:</small><br>
+                  <h4>{{$m->name}}</h4>
+                  <hr>
+                  <small>Email:</small><br>
+                  <h5><a href="mailto: {{$m->email}}">{{$m->email}}</a></h5>
+                  <hr>
+                  <small>Bericht:</small><br>
+                  <div class="w-100">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control w-100">
+                        {{$m->desc}}
+                    </textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      @endforeach
+
 @endsection

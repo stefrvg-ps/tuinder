@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Messages;
 use Illuminate\Http\Request;
 
 class CmsContactController extends Controller
@@ -13,7 +14,8 @@ class CmsContactController extends Controller
      */
     public function index()
     {
-        return view('admin/contact/index');
+        $messages = Messages::all();
+        return view('admin/contact/index')->with('messages', $messages);
     }
 
     /**
