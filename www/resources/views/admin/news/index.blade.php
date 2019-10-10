@@ -68,6 +68,18 @@
                             <td>{{$cn->title}}</td>
                             <td>{{$cn->news_desc}}</td>
                             <td><img src="{{ asset('storage/news/'.$cn->image_name) }}" style="max-height:5%" alt=""></td>
+                            <td class="float-right">
+                                <a href="/admin/news/{{$cn->id}}/edit" class="btn btn-info btn-fill">BEWERK</a>
+                                @if($cn->count('id') > 1)
+                                    <form method="post" action="/admin/news/{{$cn->id}}"style="display: inline-block;">
+                                        @csrf
+                                        @method('delete')
+                                        <button name="delete" type="submit" class="btn btn-danger" title="Verwijder" style="padding-top: -31px !important;">
+                                                <i class="fas fa-trash-alt" style="font-size: 24px;"></i>
+                                        </button>
+                                    </form>
+                                @endif
+                              </td>
                           </tr>
                           @endforeach
                       </tbody>
