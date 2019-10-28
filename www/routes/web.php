@@ -12,6 +12,7 @@
 */
 
 Route::resource('/', 'IndexController');
+Route::resource('/extraportfolio', 'ExtraPortfolioController');
 Auth::routes();
 
 
@@ -22,6 +23,7 @@ Route::middleware(['auth'])->group(function(){
         Route::resource('news', 'CmsNewsController');
         Route::resource('contact', 'CmsContactController');
         Route::resource('portfolio', 'CmsPortfolioController');
+        Route::resource('planning', 'CmsPlanningController');
     });
 });
 

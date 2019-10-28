@@ -1151,3 +1151,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 .carousel-inner .carousel-item-left{ 
   transform: translateX(0);
 }
+
+.collapse-content .fa.fa-heart:hover {
+  color: #f44336 !important;
+}
+.collapse-content .fa.fa-share-alt:hover {
+  color: #0d47a1 !important;
+}

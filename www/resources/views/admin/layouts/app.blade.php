@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>NC Tuinservice</title>
+  <title>NC Tuinservice | Adminpanel</title>
   <!-- Favicon -->
   <link href="{{ asset('img/favicon.ico') }}" rel="icon" type="image/x-icon">
   <!-- Fonts -->

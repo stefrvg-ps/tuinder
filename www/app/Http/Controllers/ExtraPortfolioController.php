@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\News;
-use App\About;
-use App\Messages;
-use App\Picture;
 
-class IndexController extends Controller
+class ExtraPortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +13,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $about = About::first();
-        $news = News::all();
-        $pictures = Picture::all();
-        return view('public.index.index')->with([
-            'pictures' => $pictures,
-            'news' => $news,
-            'about' => $about
-        ]);
+        return view('public/extraportfolio/index');
     }
 
     /**
@@ -45,22 +34,7 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|max:20',
-            'email' => 'required',
-            'subject' => 'required|max:20',
-            'desc' => 'required',
-            
-        ]);
-
-        $message = new Messages;
-        $message->name = $request->input('name');
-        $message->email = $request->input('email');
-        $message->subject = $request->input('subject');
-        $message->desc = $request->input('desc');
-        $message->save();
-
-        return redirect('/#contact')->with('success', 'Uw bericht is verzonden. Wij proberen zo spoedig mogelijk te reageren!');
+        //
     }
 
     /**

@@ -85,12 +85,17 @@
           </li>
         </ul>
         <!-- Divider -->
-        {{-- <hr class="my-3"> --}}
-        <!-- Heading -->
-        {{-- <h6 class="navbar-heading text-muted">Persoonlijk</h6> --}}
-        <!-- Navigation -->
         <hr class="my-3">
+        <!-- Heading -->
+        <h6 class="navbar-heading text-muted">Persoonlijk</h6>
+        <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
+          <li class="nav-item">
+            <a class="nav-link {{ $page === "planning" ? 'active' : '' }}" href="/admin/planning">
+              <i class="ni ni-email-83 text-black"></i> Planning
+            </a>
+          </li>
+          <hr class="my-3">
           <li class="nav-item">
             <a class="nav-link" href="/">
               <i class="ni ni-bold-left"></i> Terug
