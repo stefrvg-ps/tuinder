@@ -79,7 +79,8 @@ class CmsNewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = News::findOrFail($id);
+        return view('admin.news.edit')->with('news', $news);
     }
 
     /**
@@ -91,7 +92,26 @@ class CmsNewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|',
+            'desc' => 'required',
+            'image' => 'image|mimes:jpg,png,svg,gif,jpeg|max:2048'
+        ]);
+        $news = News::findOrFail($id);
+        if($request->hasFile('image')){
+            if($news->image_name != 'stock_picture_image.png'){
+                Storage::disk('local')->delete('news/'.$news->image_name);
+            }
+            $imageName = time().'_PORTFOLIO.'.$request->file('image')->getClientOriginalExtension();
+            $news->image_name = $imageName;
+            Storage::disk('local')->putFileAs('news', $request->file('image'), $imageName);
+        }
+
+        $news->news_desc = $request->input('desc');
+        $news->title = $request->input('title');
+        $news->update();
+
+        return redirect('/admin/news')->with('success', 'Succesvol foto aangepast');
     }
 
     /**
@@ -102,6 +122,10 @@ class CmsNewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $news = News::findOrFail($id);
+        Storage::disk('local')->delete('news/'.$news->image_name);
+        $news->delete();
+
+        return redirect('/admin/news')->with('success', 'Succesvol een foto verwijderd');
     }
 }
