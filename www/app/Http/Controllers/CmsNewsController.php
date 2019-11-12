@@ -43,7 +43,7 @@ class CmsNewsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:20',
-            'description' => 'required',
+            'desc' => 'required',
             'image' => 'image|mimes:jpg,png,svg,gif,jpeg|max:2048'
         ]);
         

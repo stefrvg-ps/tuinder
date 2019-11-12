@@ -48,7 +48,7 @@
               <h3 class="mb-0">Dashboard</h3>
             </div>
             <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda porro, atque saepe distinctio vitae nobis itaque facere autem animi inventore natus voluptate sunt obcaecati, amet voluptatem reprehenderit est consequuntur reiciendis corporis tempore labore error expedita cum ab! Maxime, molestias recusandae quas explicabo rerum voluptas? Numquam nemo, ratione quis asperiores voluptatum dignissimos repudiandae consequuntur ea omnis, minima quasi reiciendis quam maxime vel nisi dolore maiores eligendi error sapiente accusamus recusandae aspernatur molestias blanditiis? Fugiat libero, itaque, quasi vero exercitationem suscipit soluta sed veritatis autem expedita commodi optio et magnam quos tenetur minima veniam corporis vitae dignissimos aperiam porro! Magni, nisi inventore.
+              Welkom op het dashboard van NC Tuinservice!
             </div>
           </div>
         </div>

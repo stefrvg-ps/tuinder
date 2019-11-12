@@ -58,6 +58,7 @@
                           <th>Email</th>
                           <th>Onderwerp</th>
                           <th>Aangemaakt</th>
+                          <th></th>
                         </tr>
                         </thead>
                         <tbody>

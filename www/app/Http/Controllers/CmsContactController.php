@@ -81,6 +81,9 @@ class CmsContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $messages = Messages::findOrFail($id);
+        $messages->delete();
+
+        return redirect('/admin/contact')->with('success', 'Succesvol een bericht verwijderd');
     }
 }
