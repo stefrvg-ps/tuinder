@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Picture;
 use Illuminate\Http\Request;
 
 class ExtraPortfolioController extends Controller
@@ -13,7 +14,11 @@ class ExtraPortfolioController extends Controller
      */
     public function index()
     {
-        return view('public/extraportfolio/index');
+        $pictures = Picture::all();
+        return view('public/extraportfolio/index')->with([
+            'pictures' => $pictures,
+
+        ]);
     }
 
     /**
