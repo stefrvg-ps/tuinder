@@ -15,7 +15,7 @@ class CmsPortfolioController extends Controller
      */
     public function index()
     {   
-        $CmsPictures = Picture::all();
+        $CmsPictures = Picture::all()->sortBy('image_desc');
 
         return view('admin/portfolio/index')->with([
             'CmsPictures' => $CmsPictures

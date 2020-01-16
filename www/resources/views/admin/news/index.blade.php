@@ -1,5 +1,5 @@
 @php
-    $page = "Nieuws";
+    $page = "nieuws";
 @endphp
 @extends('admin.layouts.app')
  
@@ -60,6 +60,7 @@
                           <th>Titel</th>
                           <th>Omschrijving</th>
                           <th>Afbeelding</th>
+                          <th></th>
                         </tr>
                       </thead>
                         <tbody>

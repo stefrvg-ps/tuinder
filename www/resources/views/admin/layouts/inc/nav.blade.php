@@ -74,7 +74,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $page === "Sfeerimpressie" ? 'active' : '' }}" href="/admin/portfolio">
+            <a class="nav-link {{ $page === "sfeerimpressie" ? 'active' : '' }}" href="/admin/portfolio">
               <i class="fas fa-users text-black"></i> Sfeerimpressie
             </a>
           </li>
