@@ -70,7 +70,7 @@
                               <td>{{$m->created_at}}</td>
                               <td class="float-right">
                               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#viewMsg{{$m->id}}"><i class="fas fa-eye" style="font-size: 24px;"></i> </button>
-                                @if($m->count('id') > 1)
+                                @if($m->count('id') > 0)
                                     <form method="post" action="/admin/contact/{{$m->id}}"style="display: inline-block;">
                                         @csrf
                                         @method('delete')
