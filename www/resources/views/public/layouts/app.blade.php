@@ -67,7 +67,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#body">Home</a></li>
+          <li><a href="{{Request::url() == '/extraportfolio' ? '/' : '/'}}">Home</a></li>
           <li><a href="{{Request::url() == '/extraportfolio' ? '/' : '/#about'}}">Over ons</a></li>
           <li><a href="{{Request::url() == '/extraportfolio' ? '/' : '/#portfolio'}}">Portfolio</a></li>
           <li><a href="{{Request::url() == '/extraportfolio' ? '/' : '/#news'}}">Nieuws</a></li>

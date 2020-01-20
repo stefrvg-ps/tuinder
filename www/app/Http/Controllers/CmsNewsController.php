@@ -111,7 +111,7 @@ class CmsNewsController extends Controller
         $news->title = $request->input('title');
         $news->update();
 
-        return redirect('/admin/news')->with('success', 'Succesvol foto aangepast');
+        return redirect('/admin/news')->with('success', 'Succesvol een nieuwsartikel aangepast');
     }
 
     /**

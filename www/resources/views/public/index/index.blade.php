@@ -100,13 +100,21 @@
     <section id="portfolio" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>Ons Portfolio</h2></div>
+          <h2>Ons Portfolio</h2>
+          <p>De foto's die u hier kunt vinden geven een sfeerimpressie van onze werkzaamheden. 
+            Zoals u ziet is er een onderscheid gemaakt tussen onderhoud, renovatie en aanleg. 
+            Laat u inspireren en bedenk dat er in uw tuin ook veel mogelijkheden zijn. 
+            </p>
+        </div>
       </div>
 
       <div class="container">
         <div class="section-header mt-3">
           <h3>Renovatie</h3>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>U bent tevreden met uw huidige tuin maar wilt toch wat aanpassingen doorvoeren zonder dat de hele tuin op de schop gaat. 
+            Dat kan!
+            Wij noemen dit het renoveren van (een deel) van uw tuin. We kijken naar de bestaande situatie van de tuin, uw wensen en wat de mogelijkheden zijn. Als het kan proberen wij producten uit uw tuin te hergebruiken. Zo maken we van iets bestaands toch weer iets 'nieuws'. 
+            </p>
         </div>
       </div>
 
@@ -137,7 +145,10 @@
       <div class="container">
         <div class="section-header mt-3">
           <h3>Aanleg</h3>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Bent u verhuisd of gaat u een nieuw huis bouwen? Of u woont nog op uw oude vertrouwde stek, maar wilt een compleet nieuwe tuin? Dan kunnen wij die voor u aanleggen. 
+
+            Vaak wordt bij tuinaanleg gedacht aan het leggen van gras, een deel van de tuin bestraten en het zetten van planten. Dat klopt. Dit zijn veel voorkomende aanlegwerkzaamheden. Toch komt er nog meer bij kijken om een tuin op de juiste manier aan te leggen. 
+            </p>
         </div>
       </div>
 
@@ -168,7 +179,11 @@
       <div class="container">
         <div class="section-header mt-3">
           <h3>Onderhoud</h3>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Steeds meer mensen hebben het druk in hun vrije tijd. Waar tuinieren eerst als ontspannen bezigheid gezien werd, is het tegenwoordig voor sommige mensen een groter wordende obstakel. Planten blijven maar groeien, onkruid overwoekert de tuin, en hagen of bomen worden te groot. 
+
+            Daar kunnen wij wat mee. Onderhoud is namelijk de specialiteit van ons bedrijf. 
+            Of het nu gaat om een jaarlijkse snoeibeurt van uw tuin of periodieke onderhoudsbeurten, bij ons is het allemaal mogelijk. Zowel voor de particulier als bedrijven.
+            </p>
         </div>
       </div>
 
